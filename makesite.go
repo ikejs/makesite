@@ -1,14 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 )
 
 func main() {
-	fileContents, err := ioutil.ReadFile("first-post.txt")
+	bytesToWrite := []byte("hello\ngo\n")
+	err := ioutil.WriteFile("new-file.txt", bytesToWrite, 0644)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Print(string(fileContents))
 }
